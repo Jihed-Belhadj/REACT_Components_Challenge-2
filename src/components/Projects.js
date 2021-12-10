@@ -1,4 +1,5 @@
 import React from 'react'
+import ProjectCards from './ProjectCards';
 
 
 
@@ -17,29 +18,11 @@ function Projects() {
     
     return (
         <div>
-
              <section className="projects-section">
-
-       {
-       
-       prj.map(el => 
-
-        <div className="project">
-        <img
-          src={el.url}
-          style={{width: "360px", height: "208, 69px"}}
-        />
-        <h3>{el.name}</h3>
-        <p>
-        Explore how budgetary constraints affect <br /> creativity–for better or worse–in our Webby <br /> Award-winning original series
-        </p>
-        <a href="#"> Explore & learn more</a><br />
-      </div>
-        
-        )}
-        </section>
-
-
+             {
+             prj.map((project,i) => <ProjectCards project= {project} key={i}/>)
+             }
+             </section>
         </div>
     )
 }
